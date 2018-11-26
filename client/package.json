@@ -11,9 +11,6 @@
     "build:types": "tsc --emitDeclarationOnly",
     "build:js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline"
   },
-  "dependencies": {
-    "style-loader": "^0.23.1"
-  },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
@@ -46,7 +43,11 @@
     "react-dom": "^16.6.3",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
     "react-sidebar": "^3.0.2",
+    "remark": "^10.0.1",
+    "remark-react": "^4.0.3",
+    "style-loader": "^0.23.1",
     "typescript": "^3.1.6",
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",

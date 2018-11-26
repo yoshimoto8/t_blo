@@ -1,6 +1,8 @@
 import React from "react";
 import Sidebar from "react-sidebar";
+import { Route } from "react-router-dom";
 import { SideBarComponents } from "./SideBarComponents";
+import Blog from "./containers/Blog";
 
 interface State {
   sidebarOpen: boolean;
@@ -29,7 +31,11 @@ class App extends React.Component<Props, State> {
           shadow={false}
           docked
         >
-          children
+          <Route path="/about-me" />
+          <Route path="/blog" component={Blog} />
+          <Route path="/tags" />
+          <Route path="/archives" />
+          <Route path="/contact" />
         </Sidebar>
       </div>
     );

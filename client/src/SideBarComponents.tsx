@@ -5,11 +5,11 @@ import { ListComponent } from "./SideBarList";
 export const SideBarComponents: React.SFC<{}> = () => {
   return (
     <ul className={sideBarList}>
-      <ListComponent title="About me" />
-      <ListComponent title="Blog" />
-      <ListComponent title="Tags" />
-      <ListComponent title="Archives" />
-      <ListComponent title="Contact" />
+      <ListComponent title="About me" urlString="about-me" />
+      <ListComponent title="Blog" urlString="blog" />
+      <ListComponent title="Tags" urlString="tags" />
+      <ListComponent title="Archives" urlString="archives" />
+      <ListComponent title="Contact" urlString="contact" />
     </ul>
   );
 };
