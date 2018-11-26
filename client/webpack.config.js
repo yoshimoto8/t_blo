@@ -1,49 +1,30 @@
-const path = require("path");
-const webpack = require("webpack");
-
-const staticAssetsLoaderConfiguration = {
-  test: /\.(gif|jpe?g|png|svg|mp4)$/,
-  use: [
-    {
-      loader: "file-loader",
-      options: {
-        name: "[name].[ext]",
-        publicPath: "/"
-      }
-    }
-  ]
-};
+var path = require("path");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js"
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", ".json"]
+  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
+        // Include ts, tsx, js, and jsx files.
+        test: /\.(ts|js)x?$/,
+        exclude: /node_modules/,
         loader: "babel-loader"
-      },
-      {
-        test: /\.css$/,
-        use: ["style-loader", "css-loader"]
-      },
-      staticAssetsLoaderConfiguration
+      }
     ]
   },
-
-  resolve: { extensions: ["*", ".js", ".jsx"] },
-  output: {
-    path: path.resolve(__dirname, "public/"),
-    publicPath: "public/",
-    filename: "bundle.js"
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"]
   },
-
   devServer: {
     contentBase: path.join(__dirname, "public/"),
     port: 3001,
-    publicPath: "http://localhost:3030/public/",
-    hotOnly: true,
-    historyApiFallback: true
-  },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+    publicPath: "http://localhost:3030/public/"
+  }
 };
