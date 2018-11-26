@@ -1,24 +1,33 @@
-# README
+## What is this application?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## versions
 
-Things you may want to cover:
+ruby 2.5.0
 
-* Ruby version
+## backend stack
 
-* System dependencies
+- Ruby on Rails
+- GraphQL
+- Mysql
 
-* Configuration
+## frontend stack
 
-* Database creation
+- TypeScript
+- React
+- Apollo Client
+- emotion(css in js)
 
-* Database initialization
+## How to setup?
 
-* How to run the test suite
+```
+bundle install
+rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+open another terminal.
 
-* Deployment instructions
-
-* ...
+```
+cd client
+yarn install
+yarn start
+```
