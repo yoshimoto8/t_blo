@@ -3,7 +3,7 @@ import { getHtmlFromMarkdown } from "../../utils/getHtmlFromMarkdown";
 
 class Blog extends React.Component<any, any> {
   render() {
-    const markdown: string = "# Hello world";
+    const markdown: string = "Hello world";
     return <div>{getHtmlFromMarkdown(markdown)}</div>;
   }
 }

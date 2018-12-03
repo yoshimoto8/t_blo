@@ -4,23 +4,19 @@ import remark2react from "remark-react";
 
 // htmlを返すtypeがわからん
 export const getHtmlFromMarkdown = (markdown: string): any => {
-  const processor = remark().use(remark2react, {
-    remarkReactComponents: {
-      td: createTableCellComponent("td")
-    }
-  });
+  const processor = remark().use(remark2react, {});
   const html = processor.processSync(markdown).contents;
   return html;
 };
 
-const remarkReactComponentsOptions = {};
+// const remarkReactComponentsOptions = {};
 
-function createTableCellComponent(tagName) {
-  return class TableCell extends React.Component {
-    render() {
-      const style = { textAlign: this.props.align };
-      const props = { ...this.props, style };
-      return createElement(tagName, props, this.props.children);
-    }
-  };
-}
+// function createTableCellComponent(tagName) {
+//   return class TableCell extends React.Component {
+//     render() {
+//       const style = { textAlign: this.props.align };
+//       const props = { ...this.props, style };
+//       return createElement(tagName, props, this.props.children);
+//     }
+//   };
+// }
